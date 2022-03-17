@@ -1,0 +1,38 @@
+import java.util.EmptyStackException;
+
+/** An interface for the ADT stack. */
+public interface StackInterface<T>
+{
+    /** Adds a new entry to the top of this stack.
+     @param newEntry  An object to be added to the stack. */
+    public void push(T newEntry);
+
+    /** Removes and returns this stack's top entry.
+     @return  The object at the top of the stack.
+     @throws EmptyStackException if the stack is empty before the operation. */
+    public T pop();
+
+    /** Retrieves this stack's top entry.
+     @return  The object at the top of the stack.
+     @throws  EmptyStackException if the stack is empty. */
+    public T peek();
+
+    /** Detects whether this stack is empty.
+     @return  True if the stack is empty. */
+    public boolean isEmpty();
+
+    /** Removes all entries from this stack. */
+    public void clear();
+
+    /** Converts infix expression to postfix expression.
+     * @param infix  An infix expression
+     * @return The corresponding postfix expression.
+     */
+    public String convertToPostFix(String infix);
+
+    /** Evaluates a postfix expression.
+     * @param postfix Any postfix expression.
+     * @return The corresponding evaluation.
+     */
+    public String evaluatePostFix(String postfix);
+} // end StackInterface
