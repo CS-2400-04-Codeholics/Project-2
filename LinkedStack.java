@@ -154,15 +154,14 @@ public class LinkedStack<T> implements StackInterface<T>
             default:
             {
                 precedenceValue = 0;
+                break;
             }
         }
-
         return precedenceValue;
-
     }
 
     @Override
-    public String evaluatePostFix(String postfix)
+    public Integer evaluatePostFix(String postfix)
     {
         return null;
     }
