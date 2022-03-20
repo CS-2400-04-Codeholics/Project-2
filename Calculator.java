@@ -1,3 +1,7 @@
+/**
+ * Calculator
+ * Testing both methods from ResizeableArrayStack and LinkStack.
+ */
 public class Calculator
 {
     public static void main(String[] args)

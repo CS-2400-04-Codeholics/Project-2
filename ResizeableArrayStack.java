@@ -9,7 +9,7 @@ public final class ResizeableArrayStack<T> implements StackInterface<T>
 {
     private T[] stack;  //Array of stack entries
     private int topIndex; //Index of top entry
-    private boolean integrityOK;
+    private boolean integrityOK = false;
     private static final int DEFAULT_CAPACITY = 50;
     private static final int MAX_CAPACITY = 10000;
 
@@ -37,12 +37,12 @@ public final class ResizeableArrayStack<T> implements StackInterface<T>
     public void push(T newEntry)
     {
         checkIntegrity();
-        ensureCapacity();
+        ensureCapacty();
         stack[topIndex + 1] = newEntry;
         topIndex++;
     } // end push
 
-    private void ensureCapacity()
+    private void ensureCapacty()
     {
         if (topIndex >= stack.length -1) // if array is full, double its size
         {
@@ -111,7 +111,7 @@ public final class ResizeableArrayStack<T> implements StackInterface<T>
      */
     private void checkIntegrity()
     {
-        if(!integrityOK)
+        if(integrityOK == false)
         {
             throw new SecurityException("INVALID INPUT!!!");
         }
@@ -119,8 +119,8 @@ public final class ResizeableArrayStack<T> implements StackInterface<T>
 
     /**
      * This checks if the given capacity is under the max limit
-     * and throws an invalid message.
-     * @param capacity The capacity being verified.
+     * and throws a invalid message.
+     * @param capacity
      */
     private void checkCapacity(int capacity)
     {
@@ -130,11 +130,6 @@ public final class ResizeableArrayStack<T> implements StackInterface<T>
         }
     }
 
-    /**
-     * Converts an infix expression to an equivalent postfix expression.
-     * @param infix The expression that is being converted.
-     * @return The equivalent postfix expression.
-     */
     public String convertToPostFix(String infix)
     {
         return null;
@@ -161,7 +156,7 @@ public final class ResizeableArrayStack<T> implements StackInterface<T>
             {
                 int operandOne = valueStack.pop();
                 int operandTwo = valueStack.pop();
-
+                
                 switch(character)
                 {
                     case '+':
@@ -171,7 +166,7 @@ public final class ResizeableArrayStack<T> implements StackInterface<T>
                         valueStack.push(operandTwo - operandOne);
                         break;
                     case '*':
-                        valueStack.push(operandTwo * operandOne);
+                        valueStack.push(operandTwo * operandTwo);
                         break;
                     case '/':
                         valueStack.push(operandTwo / operandOne);

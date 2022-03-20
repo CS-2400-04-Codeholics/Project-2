@@ -1,24 +1,37 @@
 import java.util.EmptyStackException;
-
+/**
+ * Linked Stack
+ * A class of stacks whose entries are stored in a chain of nodes.
+ * @author Ian Atkinson
+ */
 public class LinkedStack<T> implements StackInterface<T>
 {
 
-    private Node topNode;
+    private Node topNode; // references the first node in the chain
 
+    /**
+     * Adds a new node index to the top of the stack.
+     */
     @Override
     public void push(T newEntry)
     {
         topNode = new Node(newEntry, topNode);
-    }
+    } // end push
 
+    /**
+     * Removes top node from the stack.
+     */
     @Override
     public T pop()
     {
         T top = peek();
         topNode = topNode.getNextNode();
         return  top;
-    }
+    } // end pop
 
+    /**
+     * Retrieves top node of the stack.
+     */
     @Override
     public T peek()
     {
@@ -30,20 +43,31 @@ public class LinkedStack<T> implements StackInterface<T>
         {
             return topNode.getData();
         }
-    }
+    } // end peek
 
+    /**
+     * Empties the top nodes.
+     */
     @Override
     public boolean isEmpty()
     {
         return topNode == null;
-    }
+    } // end isEmpty
 
+    /**
+     * Clears entry top nodes.
+     */
     @Override
     public void clear()
     {
         topNode = null;
-    }
+    } // end clear
 
+    /**
+     * Converts an infix expression to an equivalent postfix expression.
+     * @param infix The expression that is being converted.
+     * @return The equivalent postfix expression.
+     */
     @Override
     public String convertToPostFix(String infix)
     {
@@ -168,8 +192,8 @@ public class LinkedStack<T> implements StackInterface<T>
 
     private class Node
     {
-        private T data;
-        private Node next;
+        private T data; // entry in stack
+        private Node next; // link to next node
 
         private Node(T dataPortion)
         {
