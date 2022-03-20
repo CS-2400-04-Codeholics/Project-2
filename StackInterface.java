@@ -34,5 +34,5 @@ public interface StackInterface<T>
      * @param postfix Any postfix expression.
      * @return The corresponding evaluation.
      */
-    public String evaluatePostFix(String postfix);
+    public Integer evaluatePostFix(String postfix);
 } // end StackInterface
