@@ -25,14 +25,12 @@ public interface StackInterface<T>
     public void clear();
 
     /** Converts infix expression to postfix expression.
-     * @param infix  An infix expression
-     * @return The corresponding postfix expression.
-     */
+     * @param infix  An infix expression.
+     * @return The corresponding postfix expression. */
     public String convertToPostFix(String infix);
 
     /** Evaluates a postfix expression.
-     * @param postfix Any postfix expression.
-     * @return The corresponding evaluation.
-     */
+     * @param postfix A postfix expression.
+     * @return The corresponding evaluation. */
     public Integer evaluatePostFix(String postfix);
 } // end StackInterface
